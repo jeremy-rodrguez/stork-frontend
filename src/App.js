@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Route, Switch } from "react-router-dom";
+import AboutUs from "./components/AboutUs";
+import Navbar from "./components/NavBar";
+import LandingPage from "./components/LandingPage";
+import stork_logo from "./images/stork_logo.jpeg";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>STORK</h1>
+      <img src={stork_logo} width="150" height="150"></img>
+      <Navbar />
+      <Route exact path="/" component={LandingPage} />
+      <Route exact path="/about_us" component={AboutUs} />
     </div>
   );
 }
