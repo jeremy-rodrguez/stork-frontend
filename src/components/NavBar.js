@@ -17,52 +17,82 @@ const colors = [
   "black",
 ];
 
-class Navbar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      color: "green",
-    };
+function Navbar() {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     color: "green",
+  //   };
 
-    this.handleClick = this.handleClick.bind(this);
-  }
+  //   this.handleClick = this.handleClick.bind(this);
+  // }
 
-  handleClick() {
-    console.log(this);
-    const newColor = colors[Math.floor(Math.random() * colors.length)];
-    this.setState({ color: newColor });
-  }
+  // handleClick() {
+  //   console.log(this);
+  //   const newColor = colors[Math.floor(Math.random() * colors.length)];
+  //   this.setState({ color: newColor });
+  // }
 
-  render() {
-    return (
-      <div className={`ui inverted ${this.state.color} menu`}>
-        <a className="item">
-          <h2 className="ui header">
-            <i className={`${this.props.icon} icon`} />
-            <div className="content">{this.props.title}</div>
-            <div className="sub header">{this.props.description}</div>
-          </h2>
-        </a>
-        <div className="right menu">
-          <div className="item">
-            <Link to="/shop" className="ui button">
-              Shop
-            </Link>
-            <br></br>
-            <Link to="/login" className="ui button">
-              Login
-            </Link>
-            <br></br>
-            <Link to="/about_us" className="ui button">
-              About Us
-            </Link>
-            <br></br>
-            <br></br>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  return (
+    <div className={`ui menu`}>
+      <Link to="/shop" className="ui button">
+        Shop
+      </Link>
+      <br></br>
+      <Link to="/login" className="ui button">
+        Login
+      </Link>
+      <br></br>
+      <Link to="/about_us" className="ui button">
+        About
+      </Link>
+      <br></br>
+      <br></br>
+    </div>
+  );
 }
 
 export default Navbar;
+
+// import React, { Component } from 'react'
+// import { Input, Menu } from 'semantic-ui-react'
+
+// export default class MenuExampleSecondary extends Component {
+//   state = { activeItem: 'home' }
+
+//   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+//   render() {
+//     const { activeItem } = this.state
+
+//     return (
+//       <Menu secondary>
+//         <Menu.Item
+//           name='home'
+//           active={activeItem === 'home'}
+//           onClick={this.handleItemClick}
+//         />
+//         <Menu.Item
+//           name='messages'
+//           active={activeItem === 'messages'}
+//           onClick={this.handleItemClick}
+//         />
+//         <Menu.Item
+//           name='friends'
+//           active={activeItem === 'friends'}
+//           onClick={this.handleItemClick}
+//         />
+//         <Menu.Menu position='right'>
+//           <Menu.Item>
+//             <Input icon='search' placeholder='Search...' />
+//           </Menu.Item>
+//           <Menu.Item
+//             name='logout'
+//             active={activeItem === 'logout'}
+//             onClick={this.handleItemClick}
+//           />
+//         </Menu.Menu>
+//       </Menu>
+//     )
+//   }
+// }
