@@ -1,53 +1,50 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-const colors = [
-  "red",
-  "orange",
-  "yellow",
-  "olive",
-  "green",
-  "teal",
-  "blue",
-  "violet",
-  "purple",
-  "pink",
-  "brown",
-  "grey",
-  "black",
-];
+import { Input, Menu } from "semantic-ui-react";
+import stork_logo from "../images/stork_logo.jpeg";
 
 function Navbar() {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     color: "green",
-  //   };
-
-  //   this.handleClick = this.handleClick.bind(this);
-  // }
-
-  // handleClick() {
-  //   console.log(this);
-  //   const newColor = colors[Math.floor(Math.random() * colors.length)];
-  //   this.setState({ color: newColor });
-  // }
-
   return (
     <div className={`ui menu`}>
-      <Link to="/shop" className="ui button">
-        Shop
-      </Link>
-      <br></br>
-      <Link to="/login" className="ui button">
-        Login
-      </Link>
-      <br></br>
-      <Link to="/about_us" className="ui button">
-        About
-      </Link>
-      <br></br>
-      <br></br>
+      <Menu secondary>
+        <div class="header item">
+          {" "}
+          <h2 class="ui left floated header">
+            <a href="/">STORK.</a>
+            <img src={stork_logo} width="150" height="150"></img>
+          </h2>
+        </div>
+        <Menu.Item>
+          <Link to="/shop" className="ui button">
+            Shop
+          </Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link to="/login" className="ui button">
+            Login
+          </Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link to="/about_us" className="ui button">
+            About
+          </Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link to="/locations" className="ui button">
+            Locations
+          </Link>
+        </Menu.Item>
+        <Menu.Item>
+          Login
+          <i class="sign-in icon"></i>
+        </Menu.Item>
+        <Menu.Item>
+          <i class="shopping bag icon"></i>
+        </Menu.Item>
+        <Menu.Item>
+          <Input icon="search" placeholder="Search..." />
+        </Menu.Item>
+      </Menu>
     </div>
   );
 }

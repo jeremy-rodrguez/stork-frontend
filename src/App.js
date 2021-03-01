@@ -11,10 +11,6 @@ import SignUp from "./components/SignUp";
 function App() {
   return (
     <div className="App">
-      <h1>
-        <a href="/">STORK</a>
-      </h1>
-      <img src={stork_logo} width="150" height="150"></img>
       <Navbar />
       <Switch>
         <Route exact path="/" component={LandingPage} />

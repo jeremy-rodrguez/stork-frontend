@@ -72,7 +72,7 @@ const SignUp = () => {
                 type="submit"
                 onClick={(e) => handleSubmit(e)}
               >
-                Login
+                Sign Up
               </Button>
             </Segment>
           </Form>

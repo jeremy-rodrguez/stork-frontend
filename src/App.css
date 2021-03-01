@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+/* About Us Page */
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+.wfh_desk {
+  border-radius: 20px;
+  height: auto;
+}
+
+.me {
+  border-radius: 20px;
+  height: auto;
+}
+
+.bio_name {
+  background-color: burlywood;
+}
+
+/* Landing Page */
