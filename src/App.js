@@ -10,8 +10,29 @@ import SignUp from "./components/SignUp";
 import Locations from "./components/Locations";
 import Favorites from "./components/Favorites";
 import Checkout from "./components/Checkout";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    let token = localStorage.getItem("token");
+    if (token) {
+      fetch("http://localhost:3000/api/v1/profile", {
+        method: "GET",
+        headers: { Authorization: `BEARER ${token}` },
+      })
+        .then((response) => response.json())
+        .then((data) =>
+          dispatch({
+            type: "SET_USER",
+            payload: data.user,
+          })
+        );
+    }
+  }, []);
+
   return (
     <div className="App">
       <Navbar />

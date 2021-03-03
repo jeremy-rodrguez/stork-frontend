@@ -15,7 +15,7 @@ const ItemCard = ({ item }) => {
       <hr></hr>
       <div class="content">
         <div class="price left floated">
-          <b>{item.price}</b>
+          <b>${item.price}</b>
         </div>
         <span class="right floated">
           <i class="heart outline like icon"></i>

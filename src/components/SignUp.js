@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const dispatch = useDispatch();
+  const nameInput = useSelector((state) => state.nameInput);
   const emailInput = useSelector((state) => state.emailInput);
   const passwordInput = useSelector((state) => state.passwordInput);
 
@@ -24,6 +25,7 @@ const SignUp = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         user: {
+          name: nameInput,
           email: emailInput,
           password: passwordInput,
         },
@@ -55,6 +57,18 @@ const SignUp = () => {
               <Form.Input
                 onChange={(e) =>
                   dispatch({
+                    type: "CHANGE_USER_NAME",
+                    value: e.target.value,
+                  })
+                }
+                fluid
+                icon="user"
+                iconPosition="left"
+                placeholder="First and Last"
+              />{" "}
+              <Form.Input
+                onChange={(e) =>
+                  dispatch({
                     type: "CHANGE_USER_INPUT",
                     value: e.target.value,
                   })
@@ -62,7 +76,7 @@ const SignUp = () => {
                 fluid
                 icon="user"
                 iconPosition="left"
-                placeholder="E-mail address"
+                placeholder="E-mail Address"
               />
               <Form.Input
                 onChange={(e) =>
@@ -77,7 +91,6 @@ const SignUp = () => {
                 placeholder="Password"
                 type="password"
               />
-
               <Button
                 color="teal"
                 fluid

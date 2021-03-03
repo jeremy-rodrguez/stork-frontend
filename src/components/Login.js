@@ -19,15 +19,38 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("https://localhost:3000/api/v1/login", {
+    fetch("http://localhost:3000/api/v1/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({}),
-    });
+      body: JSON.stringify({
+        user: {
+          email: emailInput,
+          password: passwordInput,
+        },
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => authResponse(data));
+  };
+
+  const authResponse = (data) => {
+    if (data.error) {
+      alert(data.error);
+    } else {
+      const token = data.jwt;
+      localStorage.token = token;
+      dispatch({
+        type: "SET_USER",
+        payload: {
+          id: data.user.id,
+          email: data.user.email,
+        },
+      });
+    }
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <Grid
         textAlign="center"
         style={{ height: "100vh" }}

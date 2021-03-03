@@ -1,4 +1,5 @@
 export const initialState = {
+  nameInput: "",
   emailInput: "",
   passwordInput: "",
   items: [],
@@ -8,6 +9,11 @@ export const initialState = {
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case "CHANGE_USER_NAME":
+      return {
+        ...state,
+        nameInput: action.value,
+      };
     case "CHANGE_USER_INPUT": // Type
       return {
         ...state,
