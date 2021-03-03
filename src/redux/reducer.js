@@ -1,6 +1,9 @@
 export const initialState = {
   emailInput: "",
   passwordInput: "",
+  items: [],
+  favorites: [],
+  user: {},
 };
 
 export const reducer = (state = initialState, action) => {
@@ -14,6 +17,21 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         passwordInput: action.value,
+      };
+    case "SET_ITEMS":
+      return {
+        ...state,
+        items: action.popcorn,
+      };
+    case "ADD_TO_FAVORITES":
+      return {
+        ...state,
+        favorites: [...state.favorites, action.favorite],
+      };
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.payload,
       };
     default:
       return state;

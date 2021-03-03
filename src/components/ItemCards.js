@@ -1,35 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card } from "semantic-ui-react";
-import desk from "../images/desk.jpeg";
+import ItemCard from "./ItemCard";
+import { useDispatch, useSelector } from "react-redux";
+import Pagination from "./Pagination";
 
-const getItems = () => {
-  fetch("http://localhost:3000/items")
-    .then((response) => response.json())
-    .then((items) => {
-      items.map((item) => ItemCards(item));
-    });
+const ItemCards = () => {
+  const dispatch = useDispatch();
+  const items = useSelector((state) => state.items);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/items")
+      .then((response) => response.json())
+      .then((items) => {
+        dispatch({
+          type: "SET_ITEMS", // (Key, Value)
+          popcorn: items,
+        });
+      });
+  }, []);
+  return (
+    <div>
+      {items.map((item) => (
+        <ItemCard key={item.id} item={item} />
+      ))}
+      {/* <Pagination /> */}
+    </div>
+  );
 };
 
-const ItemCards = ({ item }) => (
-  <Card>
-    <div class="content">
-      <a class="header">Kristy</a>
-    </div>
-    <div class="image">
-      <img src={desk}></img>
-    </div>
-    <hr></hr>
-    <div class="description">Kristy is an art director living in New York.</div>
-    <hr></hr>
-    <div class="content">
-      <div class="price left floated">
-        <b>Price</b>
-      </div>
-      <span class="right floated">
-        <i class="heart outline like icon"></i>
-      </span>
-    </div>
-  </Card>
-);
-
 export default ItemCards;
+
+// [] prevents the useEffect from running again which causes an infinite loop

@@ -35,11 +35,24 @@ function Navbar() {
           </Link>
         </Menu.Item>
         <Menu.Item>
-          Login
-          <i class="sign-in icon"></i>
+          <Link to="/checkout">
+            <div class="ui animated fade button" tabindex="0">
+              <div class="visible content">
+                <i class="shopping bag icon"></i>
+              </div>
+              <div class="hidden content">Checkout</div>
+            </div>
+          </Link>
         </Menu.Item>
         <Menu.Item>
-          <i class="shopping bag icon"></i>
+          <Link to="/favorites">
+            <div class="ui animated fade button" tabindex="0">
+              <div class="visible content">
+                <i class="heart outline like icon"></i>
+              </div>
+              <div class="hidden content">Favorites</div>
+            </div>
+          </Link>
         </Menu.Item>
         <Menu.Item>
           <Input icon="search" placeholder="Search..." />
@@ -50,46 +63,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-// import React, { Component } from 'react'
-// import { Input, Menu } from 'semantic-ui-react'
-
-// export default class MenuExampleSecondary extends Component {
-//   state = { activeItem: 'home' }
-
-//   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
-//   render() {
-//     const { activeItem } = this.state
-
-//     return (
-//       <Menu secondary>
-//         <Menu.Item
-//           name='home'
-//           active={activeItem === 'home'}
-//           onClick={this.handleItemClick}
-//         />
-//         <Menu.Item
-//           name='messages'
-//           active={activeItem === 'messages'}
-//           onClick={this.handleItemClick}
-//         />
-//         <Menu.Item
-//           name='friends'
-//           active={activeItem === 'friends'}
-//           onClick={this.handleItemClick}
-//         />
-//         <Menu.Menu position='right'>
-//           <Menu.Item>
-//             <Input icon='search' placeholder='Search...' />
-//           </Menu.Item>
-//           <Menu.Item
-//             name='logout'
-//             active={activeItem === 'logout'}
-//             onClick={this.handleItemClick}
-//           />
-//         </Menu.Menu>
-//       </Menu>
-//     )
-//   }
-// }

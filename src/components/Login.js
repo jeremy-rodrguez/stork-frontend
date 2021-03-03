@@ -1,30 +1,3 @@
-// import React, { Component } from "react";
-
-// const Login = () => {
-//   return (
-//     <div>
-//       <form className="login">
-//         <label>
-//           <h3>Name.</h3>
-//           <input type="text" name="name" className="textbox" />
-//         </label>
-//         <br></br>
-//         <label>
-//           <h3>Password.</h3>
-//           <input type="password" name="password" className="textbox" />
-//         </label>
-//         <br></br>
-//         <input type="submit" value="Sign In" />
-//         <p>
-//           Don't have an account? <a href="">Sign Up</a>
-//         </p>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default Login;
-
 import React from "react";
 import {
   Button,
@@ -36,7 +9,7 @@ import {
   ModalActions,
   Segment,
 } from "semantic-ui-react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux"; // UD to set state and US to use state
 import { Link } from "react-router-dom";
 
 const Login = () => {

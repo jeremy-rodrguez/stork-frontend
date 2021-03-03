@@ -8,7 +8,9 @@ class AboutUs extends Component {
   render() {
     return (
       <div className="about-us-div row">
-        <h1 className="bio_name">Jeremy Rodriguez</h1>
+        <h1 className="bio_name" class="ui center aligned header">
+          Jeremy Rodriguez
+        </h1>
         <div class="column">
           <h2>The Short</h2>
           <p>

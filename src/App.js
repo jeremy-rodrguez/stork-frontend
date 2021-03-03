@@ -7,6 +7,9 @@ import stork_logo from "./images/stork_logo.jpeg";
 import Login from "./components/Login";
 import ItemCards from "./components/ItemCards";
 import SignUp from "./components/SignUp";
+import Locations from "./components/Locations";
+import Favorites from "./components/Favorites";
+import Checkout from "./components/Checkout";
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/shop" component={ItemCards} />
         <Route exact path="/sign_up" component={SignUp} />
+        <Route exact path="/locations" component={Locations} />
+        <Route exact path="/favorites" component={Favorites} />
+        <Route exact path="/checkout" component={Checkout} />
       </Switch>
     </div>
   );
