@@ -11,8 +11,9 @@ import {
 } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux"; // UD to set state and US to use state
 import { Link } from "react-router-dom";
+// import history from "./History";
 
-const Login = () => {
+const Login = (props) => {
   const dispatch = useDispatch();
   const emailInput = useSelector((state) => state.emailInput);
   const passwordInput = useSelector((state) => state.passwordInput);
@@ -46,6 +47,7 @@ const Login = () => {
           email: data.user.email,
         },
       });
+      // props.history.push("/");
     }
   };
 

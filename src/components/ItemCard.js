@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { Card } from "semantic-ui-react";
+import { useDispatch, useSelector } from "react-redux";
 
 const ItemCard = ({ item }) => {
+  const dispatch = useDispatch();
+  const favorited = useSelector((state) => state.favorites);
+
   return (
     <Card>
       <div class="content">

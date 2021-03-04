@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-class Checkout extends Component {
-  state = {};
-  render() {
-    return <div>Checkout here with a Counter like example, possibly.</div>;
-  }
-}
+const Checkout = () => {
+  const dispatch = useDispatch();
+  const checkout = useSelector((state) => state.checkout);
+
+  return <div>Checkout here with a Counter like example, possibly.</div>;
+};
 
 export default Checkout;

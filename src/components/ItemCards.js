@@ -19,7 +19,7 @@ const ItemCards = () => {
       });
   }, []);
   return (
-    <div>
+    <div class="ui grid">
       {items.map((item) => (
         <ItemCard key={item.id} item={item} />
       ))}

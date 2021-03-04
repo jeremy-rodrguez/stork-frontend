@@ -1,9 +1,19 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Input, Menu } from "semantic-ui-react";
 import stork_logo from "../images/stork_logo.jpeg";
 
 function Navbar() {
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    localStorage.clear();
+    dispatch({
+      type: "SET_USER",
+      user: {},
+    });
+  };
+
   return (
     <div className={`ui menu`}>
       <Menu secondary>
@@ -56,6 +66,13 @@ function Navbar() {
         </Menu.Item>
         <Menu.Item>
           <Input icon="search" placeholder="Search..." />
+        </Menu.Item>
+        <Menu.Item>
+          <Link to="/">
+            <button class="ui button" onClick={handleLogout}>
+              <i class="sign-out icon"></i>
+            </button>
+          </Link>
         </Menu.Item>
       </Menu>
     </div>

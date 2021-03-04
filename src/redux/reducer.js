@@ -5,6 +5,7 @@ export const initialState = {
   items: [],
   favorites: [],
   user: {},
+  checkout: [],
 };
 
 export const reducer = (state = initialState, action) => {
@@ -38,6 +39,11 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         user: action.payload,
+      };
+    case "CHECKOUT":
+      return {
+        ...state,
+        checkout: [...state.checkout, action.checkout],
       };
     default:
       return state;

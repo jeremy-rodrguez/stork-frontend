@@ -12,6 +12,7 @@ import Favorites from "./components/Favorites";
 import Checkout from "./components/Checkout";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+// import History from "./components/History";
 
 function App() {
   const dispatch = useDispatch();
