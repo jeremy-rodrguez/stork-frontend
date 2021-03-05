@@ -1,11 +1,13 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Input, Menu } from "semantic-ui-react";
 import stork_logo from "../images/stork_logo.jpeg";
 
 function Navbar() {
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+
   const handleLogout = () => {
     localStorage.clear();
     dispatch({
@@ -17,13 +19,16 @@ function Navbar() {
   return (
     <div className={`ui menu`}>
       <Menu secondary>
-        <div class="header item">
-          {" "}
-          <h2 class="ui left floated header">
-            <a href="/">STORK.</a>
-            <img src={stork_logo} width="150" height="150"></img>
-          </h2>
-        </div>
+        <Menu.Item>{user ? <h3>Welcome, {user.email}!</h3> : null}</Menu.Item>
+        <Menu.Item>
+          <div class="header item">
+            {" "}
+            <h2 class="ui left floated header">
+              <a href="/">STORK.</a>
+              <img src={stork_logo} width="150" height="150"></img>
+            </h2>
+          </div>
+        </Menu.Item>
         <Menu.Item>
           <Link to="/shop" className="ui button">
             Shop

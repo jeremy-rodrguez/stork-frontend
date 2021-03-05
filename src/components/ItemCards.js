@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Card } from "semantic-ui-react";
 import ItemCard from "./ItemCard";
 import { useDispatch, useSelector } from "react-redux";
-import Pagination from "./Pagination";
 
 const ItemCards = () => {
   const dispatch = useDispatch();
@@ -19,11 +18,12 @@ const ItemCards = () => {
       });
   }, []);
   return (
-    <div class="ui grid">
-      {items.map((item) => (
-        <ItemCard key={item.id} item={item} />
-      ))}
-      {/* <Pagination /> */}
+    <div class="ui clearing segment">
+      <div class="ui special cards">
+        {items.map((item) => (
+          <ItemCard key={item.id} item={item} />
+        ))}
+      </div>
     </div>
   );
 };

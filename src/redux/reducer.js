@@ -4,7 +4,7 @@ export const initialState = {
   passwordInput: "",
   items: [],
   favorites: [],
-  user: {},
+  user: null,
   checkout: [],
 };
 
@@ -30,10 +30,10 @@ export const reducer = (state = initialState, action) => {
         ...state,
         items: action.popcorn,
       };
-    case "ADD_TO_FAVORITES":
+    case "SET_FAVORITES":
       return {
         ...state,
-        favorites: [...state.favorites, action.favorite],
+        favorites: action.favorites,
       };
     case "SET_USER":
       return {

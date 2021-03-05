@@ -11,7 +11,6 @@ import {
 } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux"; // UD to set state and US to use state
 import { Link } from "react-router-dom";
-// import history from "./History";
 
 const Login = (props) => {
   const dispatch = useDispatch();
@@ -47,7 +46,7 @@ const Login = (props) => {
           email: data.user.email,
         },
       });
-      // props.history.push("/");
+      props.history.push("/");
     }
   };
 
@@ -89,7 +88,6 @@ const Login = (props) => {
                 placeholder="Password"
                 type="password"
               />
-
               <Button
                 color="teal"
                 fluid
