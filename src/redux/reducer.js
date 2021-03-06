@@ -40,10 +40,10 @@ export const reducer = (state = initialState, action) => {
         ...state,
         user: action.payload,
       };
-    case "CHECKOUT":
+    case "SET_CHECKOUT":
       return {
         ...state,
-        checkout: [...state.checkout, action.checkout],
+        checkout: [...state.checkout, action.addedToCheckout],
       };
     default:
       return state;

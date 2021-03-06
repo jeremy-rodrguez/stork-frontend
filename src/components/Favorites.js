@@ -21,14 +21,3 @@ const Favorites = () => {
 };
 
 export default Favorites;
-
-{
-  /* <div class="ui clearing segment">
-      <div class="ui special cards">
-        {items.map((item) => (
-          <ItemCard key={item.id} item={item} />
-        ))}
-      </div>
-    </div>
-  ); */
-}

@@ -12,7 +12,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-const SignUp = () => {
+const SignUp = (props) => {
   const dispatch = useDispatch();
   const nameInput = useSelector((state) => state.nameInput);
   const emailInput = useSelector((state) => state.emailInput);
@@ -38,6 +38,7 @@ const SignUp = () => {
           type: "SET_USER",
           payload: data.user,
         });
+        props.history.push("/");
       });
   };
 

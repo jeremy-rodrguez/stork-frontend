@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Input, Menu } from "semantic-ui-react";
-import stork_logo from "../images/stork_logo.jpeg";
+import stork_logo_1 from "../images/stork_logo_1.png";
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -19,13 +19,14 @@ function Navbar() {
   return (
     <div className={`ui menu`}>
       <Menu secondary>
-        <Menu.Item>{user ? <h3>Welcome, {user.email}!</h3> : null}</Menu.Item>
+        <Menu.Item>{user ? <h3>Welcome, {user.name}!</h3> : null}</Menu.Item>
         <Menu.Item>
           <div class="header item">
             {" "}
             <h2 class="ui left floated header">
-              <a href="/">STORK.</a>
-              <img src={stork_logo} width="150" height="150"></img>
+              <a href="/">
+                <img src={stork_logo_1} width="75" height="75"></img>
+              </a>
             </h2>
           </div>
         </Menu.Item>
