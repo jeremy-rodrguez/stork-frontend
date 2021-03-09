@@ -41,10 +41,11 @@ const Login = (props) => {
       localStorage.token = token;
       dispatch({
         type: "SET_USER",
-        payload: {
-          id: data.user.id,
-          email: data.user.email,
-        },
+        payload: data.user,
+      });
+      dispatch({
+        type: "SET_FAVORITES",
+        favorites: data.user.items,
       });
       props.history.push("/");
     }

@@ -8,11 +8,8 @@ class Homepage extends Component {
       <div class="pusher">
         <div class="ui inverted vertical masthead center aligned segment">
           <div class="ui text container">
-            <h1 class="ui inverted header">Imagine-a-Company</h1>
-            <h2>Do whatever you want when you want to.</h2>
-            <div class="ui huge primary button">
-              Get Started <i class="right arrow icon"></i>
-            </div>
+            <h1 class="ui inverted header">Welcome to Stork</h1>
+            <h2>Your one-stop shop for all of your baby product needs.</h2>
           </div>
         </div>
 

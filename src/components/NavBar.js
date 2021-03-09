@@ -16,6 +16,10 @@ function Navbar() {
     });
   };
 
+  const handleSearch = (e) => {
+    console.log("I'm searching...", e.target);
+  };
+
   return (
     <div className={`ui menu`}>
       <Menu secondary>
@@ -71,7 +75,11 @@ function Navbar() {
           </Link>
         </Menu.Item>
         <Menu.Item>
-          <Input icon="search" placeholder="Search..." />
+          <Input
+            icon="search"
+            placeholder="Search..."
+            onChange={handleSearch}
+          />
         </Menu.Item>
         <Menu.Item>
           <Link to="/">
