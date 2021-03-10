@@ -44,8 +44,10 @@ class Footer extends Component {
                 Get a free baby item when you sign up for our rewards program
                 and collect points for every purchase!
               </p>
-              <button>
-                <a href="/">Sign Up For Free!</a>
+              <button class="ui inverted button">
+                <a href="/" style={{ color: "white" }}>
+                  Sign Up For Free!
+                </a>
               </button>
             </div>
           </div>

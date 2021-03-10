@@ -23,7 +23,7 @@ function Navbar() {
   return (
     <div className={`ui menu`}>
       <Menu secondary>
-        <Menu.Item>{user ? <h3>Welcome, {user.name}!</h3> : null}</Menu.Item>
+        {/* <Menu.Item>{user ? <h3>Welcome, {user.name}!</h3> : null}</Menu.Item> */}
         <Menu.Item>
           <div class="header item">
             {" "}
@@ -34,50 +34,53 @@ function Navbar() {
             </h2>
           </div>
         </Menu.Item>
+        <Menu.Item>{user ? <h3>Welcome, {user.name}!</h3> : null}</Menu.Item>
         <Menu.Item>
-          <Link to="/shop" className="ui button">
+          <Link to="/shop" className="ui black basic button">
             Shop
           </Link>
         </Menu.Item>
         <Menu.Item>
-          <Link to="/login" className="ui button">
+          <Link to="/login" className="ui black basic button">
             Login
           </Link>
         </Menu.Item>
         <Menu.Item>
-          <Link to="/about_us" className="ui button">
+          <Link to="/about_us" className="ui black basic button">
             About
           </Link>
         </Menu.Item>
         <Menu.Item>
-          <Link to="/locations" className="ui button">
+          <Link to="/locations" className="ui black basic button">
             Locations
           </Link>
         </Menu.Item>
         <Menu.Item>
           <Link to="/checkout">
-            <div class="ui icon button" tabindex="0">
+            <div class="ui black basic icon button" tabindex="0">
               <i class="shopping bag icon"></i>
             </div>
           </Link>
         </Menu.Item>
         <Menu.Item>
           <Link to="/favorites">
-            <div class="ui icon button" tabindex="0">
+            <div class="ui red basic icon button" tabindex="0">
               <i class="heart outline like icon"></i>
             </div>
           </Link>
         </Menu.Item>
         <Menu.Item>
-          <Input
-            icon="search"
-            placeholder="Search..."
-            onChange={handleSearch}
-          />
+          <div class="ui input focus">
+            <Input
+              icon="search"
+              placeholder="Search..."
+              onChange={handleSearch}
+            />
+          </div>
         </Menu.Item>
         <Menu.Item>
           <Link to="/">
-            <button class="ui button" onClick={handleLogout}>
+            <button class="ui black basic button" onClick={handleLogout}>
               <i class="sign-out icon"></i>
             </button>
           </Link>

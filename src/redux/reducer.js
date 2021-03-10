@@ -50,6 +50,11 @@ export const reducer = (state = initialState, action) => {
         ...state,
         checkout: state.checkout.filter((item) => item.id !== action.item.id),
       };
+    case "REMOVE_CHECKOUT":
+      return {
+        ...state,
+        checkout: [],
+      };
     default:
       return state;
   }

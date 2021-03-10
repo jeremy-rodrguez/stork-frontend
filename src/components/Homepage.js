@@ -36,11 +36,7 @@ class Homepage extends Component {
                 ></img>
               </div>
             </div>
-            <div class="row">
-              <div class="center aligned column">
-                <a class="ui huge button">Check Them Out</a>
-              </div>
-            </div>
+            <div class="row"></div>
           </div>
         </div>
 
@@ -49,16 +45,12 @@ class Homepage extends Component {
             <div class="center aligned row">
               <div class="column">
                 <h3>"What a Company"</h3>
-                <p>That is what they all say about us</p>
+                <p>That is what they all say about us.</p>
               </div>
               <div class="column">
                 <h3>"I shouldn't have gone with their competitor."</h3>
                 <p>
-                  <img
-                    src={"assets/images/avatar/nan.jpg"}
-                    class="ui avatar image"
-                  ></img>{" "}
-                  <b>Nan</b> Chief Fun Officer Acme Toys
+                  <b>John Doe</b> Chief Fun Officer Acme Toys
                 </p>
               </div>
             </div>
@@ -74,7 +66,6 @@ class Homepage extends Component {
               massive amounts of whitespace and generic content that can seem
               massive, monolithic and worth your attention.
             </p>
-            <a class="ui large button">Read More</a>
             <h4 class="ui horizontal header divider">
               <a href="#">Case Studies</a>
             </h4>

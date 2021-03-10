@@ -9,7 +9,7 @@ const Checkout = () => {
   const dispatch = useDispatch();
   const checkout = useSelector((state) => state.checkout);
   const [array, setArray] = useState([]);
-  // const [total, setTotal] = useState(0);
+  const user = useSelector((state) => state.user);
 
   const addTotalToArray = (count, numberTotal) => {
     console.log(count);
@@ -51,9 +51,26 @@ const Checkout = () => {
     return <p>{total}</p>;
   };
 
+  const handlePurchaseConfirmation = () => {
+    dispatch({
+      type: "REMOVE_CHECKOUT",
+      checkout: [],
+    });
+    alert("Thank you for your order! Your confirmation has been emailed.");
+  };
+
   return (
     <div>
-      <div>{getTotalFromArray()}</div>
+      <div class="ui left action input">{getTotalFromArray()}</div>
+      <br></br>
+      <div class="ui message">
+        <button
+          class="ui black basic button"
+          onClick={() => handlePurchaseConfirmation()}
+        >
+          Place Order
+        </button>
+      </div>
       <div class="ui clearing segment">
         <div class="ui special cards">
           {checkout.map((checkout) => (

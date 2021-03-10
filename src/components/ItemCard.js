@@ -11,29 +11,6 @@ const ItemCard = ({ item, handleFavorites, handleCheckout }) => {
 
   const checkoutIds = checkout.map((item) => item.id);
 
-  // const handleCheckout = () => {
-  //   console.log(e.target, "Click Me");
-  //   // fetch("http://localhost:3000/order_items", {
-  //   //   method: "POST",
-  //   //   headers: {
-  //   //     "Content-Type": "application/json",
-  //   //     Authorization: `Bearer ${localStorage.token}`,
-  //   //   },
-  //   //   body: JSON.stringify({
-  //   //     checkout: {
-  //   //       user_id: user.id,
-  //   //       item_id: item.id,
-  //   //     },
-  //   //   }),
-  //   // })
-  //   //   .then((response) => response.json())
-
-  //   dispatch({
-  //     type: "SET_CHECKOUT",
-  //     addedToCheckout: checkout,
-  //   });
-  // };
-
   return (
     <Card>
       <div class="content">
