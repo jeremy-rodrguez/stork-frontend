@@ -56,21 +56,15 @@ function Navbar() {
         </Menu.Item>
         <Menu.Item>
           <Link to="/checkout">
-            <div class="ui animated fade button" tabindex="0">
-              <div class="visible content">
-                <i class="shopping bag icon"></i>
-              </div>
-              <div class="hidden content">Checkout</div>
+            <div class="ui icon button" tabindex="0">
+              <i class="shopping bag icon"></i>
             </div>
           </Link>
         </Menu.Item>
         <Menu.Item>
           <Link to="/favorites">
-            <div class="ui animated fade button" tabindex="0">
-              <div class="visible content">
-                <i class="heart outline like icon"></i>
-              </div>
-              <div class="hidden content">Favorites</div>
+            <div class="ui icon button" tabindex="0">
+              <i class="heart outline like icon"></i>
             </div>
           </Link>
         </Menu.Item>
