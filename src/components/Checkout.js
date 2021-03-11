@@ -56,7 +56,9 @@ const Checkout = () => {
       type: "REMOVE_CHECKOUT",
       checkout: [],
     });
-    alert("Thank you for your order! Your confirmation has been emailed.");
+    alert(
+      `Thank you for your order, ${user.name}! Your confirmation has been sent to ${user.email}.`
+    );
   };
 
   return (

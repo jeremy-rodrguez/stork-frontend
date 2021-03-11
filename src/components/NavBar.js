@@ -34,6 +34,9 @@ function Navbar() {
             </h2>
           </div>
         </Menu.Item>
+        {/* <Menu.Item>
+          <i class="user circle outline icon"></i>
+        </Menu.Item> */}
         <Menu.Item>{user ? <h3>Welcome, {user.name}!</h3> : null}</Menu.Item>
         <Menu.Item>
           <Link to="/shop" className="ui black basic button">
