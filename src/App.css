@@ -54,3 +54,31 @@
   border-radius: 20px;
   height: auto;
 }
+
+.bg-image {
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(1px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-image-2 {
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(1px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
